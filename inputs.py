@@ -1,51 +1,138 @@
-MATRIX = """
-<matrix>
-    <category name="Vertrauen bilden">
-        <skill name="Kunden verstehen">
-            <rating>3.5</rating>
-        </skill>
-        <skill name="Wertschätzend zusammenarbeiten">
-            <rating>2</rating>
-        </skill>
-        <skill name="Andere gewinnen">
-            <rating>2</rating>
-        </skill>
-    </category>
-    <category name="Leistungskultur fordern">
-        <skill name="Leistung erbringen">
-            <rating>3</rating>
-        </skill>
-        <skill name="Auf Effizienz fokussieren">
-            <rating>3.5</rating>
-        </skill>
-        <skill name="Unternehmenswert schaffen">
-            <rating>3</rating>
-        </skill>
-    </category>
-    <category name="Mutig handeln">
-        <skill name="Intelligente Lösungen entwickeln">
-            <rating>2.5</rating>
-        </skill>
-        <skill name="Neue Wege gehen">
-            <rating>2.5</rating>
-        </skill>
-        <skill name="Veränderung leben">
-            <rating>2.5</rating>
-        </skill>
-    </category>
-    <category name="In Menschen investieren">
-        <skill name="Zukunftsorientierung führen">
-            <rating>2</rating>
-        </skill>
-        <skill name="Orientierung geben">
-            <rating>2</rating>
-        </skill>
-        <skill name="Vertrauen leben">
-            <rating>2.5</rating>
-        </skill>
-    </category>
-</matrix>
-"""
+matrix = {
+    'Kunden verstehen': 3.5,
+    'Wertschätzend zusammenarbeiten': 2.0,
+    'Andere gewinnen': 2.0,
+    'Leistung erbringen': 3.0,
+    'Auf Effizienz fokussieren': 3.5,
+    'Unternehmenswert schaffen': 3.0,
+    'Intelligente Lösungen entwickeln': 2.5,
+    'Neue Wege gehen': 2.5,
+    'Veränderung leben': 2.5,
+    'Zukunftsorientierung führen': 2.0,
+    'Orientierung geben': 2.0,
+    'Vertrauen leben': 2.5
+}
+
+operational_management_skillset_explanation = {
+    'Kunden verstehen': [
+        "Informiert sich über Trends und Entwicklungen der Kunden.",
+        "Optimiert Arbeitsweisen im eigenen Verantwortungsbereich, um noch bessere Ergebnisse für Kunden erbringen zu können.",
+        "Sensibilisiert Mitarbeitende und KollegInnen für Kundenbedarfe.",
+        "Geht als Beispiel in Sachen Kundenorientierung voran.",
+        "Findet ausgewogene Lösungen in Bezug auf Kundenwünsche auf der einen und Aufwand auf der anderen Seite.",
+        "Übernimmt Verantwortung für die Lösung von Kundenproblemen über Teamgrenzen hinweg."
+    ],
+    'Wertschätzend zusammenarbeiten': [
+        "Baut eine konstruktive Arbeitsbeziehung zu den jeweiligen Schnittstellen auf und bindet sie ein.",
+        "Sucht in Konflikten nach Win-Win-Lösungen anstatt den Erfolg des eigenen Verantwortungsbereichs einseitig zu maximieren.",
+        "Fördert eine faire und respektvolle Zusammenarbeit im Verantwortungsbereich.",
+        "Fördert und unterstützt kontroverse Diskussionen und führt Entscheidungen herbei.",
+        "Wertschätzt und unterstützt Andersartigkeit im Verantwortungsbereich.",
+        "Schafft eine Atmosphäre, in der Konflikte offen angesprochen werden mit dem Ziel diese zu lösen.",
+        "Fördert eine offene Feedbackkultur im Verantwortungsgebiet.",
+        "Erkennt potenzielle Konflikte frühzeitig und löst sie geschickt.",
+        "Begegnet KollegInnen und Mitarbeitenden mit Grundvertrauen."
+    ],
+    'Andere gewinnen': [
+        "Argumentiert logisch stringent und schlüssig.",
+        "Zeigt sich flexibel und geschickt darin, in Diskussionen auf Argumente Anderer zu reagieren.",
+        "Ist sowohl in der Lage die Sprache der Mitarbeitenden zu sprechen als auch den Management-Kreis oder externe höherrangige AnsprechpartnerInnen zielgruppengerecht zu adressieren.",
+        "Vermittelt Begeisterung für die eigenen Ideen und steckt Andere mit der eigenen Begeisterung an.",
+        "Verfolgt in Diskussionen Ziele nachhaltig und versucht es bei Misserfolgen erneut.",
+        "Wirkt souverän im Kontakt mit internen und externen Ansprechpartnern sowie in ungewohnten Situationen.",
+        "Vertritt Entscheidungen des Managements überzeugend und erzielt hierfür Akzeptanz, auch wenn er/sie selbst anders entschieden hätte."
+    ],
+    'Leistung erbringen': [
+        "Formuliert herausfordernde Ziele für sich und den eigenen Verantwortungsbereich.",
+        "Leitet bei Schwierigkeiten rechtzeitig Maßnahmen zur Sicherung der Zielerreichung ein.",
+        "Unterstützt Mitarbeitende und KollegInnen und schafft die Rahmenbedingungen dafür, dass diese nachhaltig gute Leistung erbringen können.",
+        "Spricht Leistungsdefizite von Mitarbeitenden und KollegInnen offen an und fordert konsequent Ergebnisse ein.",
+        "Vermittelt Mitarbeitenden und KollegInnen Leistung als positiven Wert.",
+        "Motiviert Mitarbeitende und KollegInnen dazu, Ziele auch bei Schwierigkeiten weiter zu verfolgen.",
+        "Reflektiert die Ursachen von Misserfolgen mit Mitarbeitenden oder KollegInnen und leitet Verbesserungen für die Zukunft ab.",
+        "Geht die „Extra Meile“, um sehr gute Ergebnisse zu erzielen."
+    ],
+    'Auf Effizienz fokussieren': [
+        "Prüft Prozesse im eigenen Team auf Effizienz und optimiert sie.",
+        "Engagiert sich für die teamübergreifende Optimierung von Prozessen und Abläufen.",
+        "Klärt Ziele und Qualitätsanspruch interner Auftraggeber auch auf höherem Management-Level.",
+        "Leitet Projekte in iterativen Arbeitsschritten, im engen Austausch mit internen Stakeholdern.",
+        "Setzt klare Prioritäten für den eigenen Verantwortungsbereich auf Grundlage übergeordneter Ziele und Vorhaben.",
+        "Informiert Mitarbeitende und KollegInnen über Ziele, Aufgaben und Prioritäten.",
+        "Greift auf Unterstützung anderer Abteilungen gezielt und überlegt zurück.",
+        "Entscheidet sicher für den eigenen Verantwortungsbereich, wo 100% notwendig und wo 80% ausreichend sind.",
+        "Erzielt gute Qualität in Produkten und Prozessen mit angemessenem Aufwand."
+    ],
+    'Unternehmenswert schaffen': [
+        "Trifft Entscheidungen für das Verantwortungsgebiet stets mit Fokus auf der Frage „Welchen Mehrwert bringt es für das Unternehmen“?",
+        "Nutzt Möglichkeiten im eigenen Verantwortungsgebiet, die dem Unternehmen einen Wettbewerbsvorteil verschaffen.",
+        "Lebt wirtschaftliches Denken vor und setzt beides im eigenen Verantwortungsgebiet um.",
+        "Prüft Prozesse und Leistungen/Produkte im eigenen Verantwortungsgebiet auf Wirtschaftlichkeit.",
+        "Beachtet die langfristigen Auswirkungen des eigenen Handelns.",
+        "Fordert nachhaltiges, umweltbewusstes Handeln im Arbeitsumfeld ein.",
+        "Vertritt Unternehmensentscheidungen und steht auch bei Kritik dahinter.",
+        "Sorgt dafür, dass Mitarbeitende und KollegInnen erkennen können, welchen Beitrag ihre Leistung zum Unternehmenserfolg hat."
+    ],
+    'Intelligente Lösungen entwickeln': [
+        "Verfügt über das fachliche Know-how, um Lösungen entwickeln und Entscheidungen im eigenen Verantwortungsbereich treffen zu können.",
+        "Bezieht konsequent Know-how-Träger verschiedener Teams bei der Lösung komplexer Probleme mit ein, die außerhalb der eigenen Expertise liegen.",
+        "Erfasst schnell die zentralen Aspekte einer Problemstellung.",
+        "Unterscheidet wichtige von weniger wichtigen Informationen und verliert sich nicht in Details.",
+        "Erkennt die Auswirkungen von Vorhaben auf andere Teams oder Schnittstellen und bezieht diese frühzeitig mit ein.",
+        "Erkennt mögliche Chancen, Risiken und mittelfristige Effekte von Lösungen.",
+        "Erstellt stimmige Konzepte für komplexe Fragestellungen."
+    ],
+    'Neue Wege gehen': [
+        "Positioniert sich auch mit ungewöhnlichen Ideen, die eventuell zunächst nicht auf positive Resonanz stoßen.",
+        "Geht neue Wege, auch wenn diese kalkulierbare Risiken beinhalten.",
+        "Ist sich der möglichen Reaktionen von Mitarbeitenden und KollegInnen auf Veränderungen bewusst und geht sensibel hiermit um.",
+        "Gibt Mitarbeitenden in ungewissen Veränderungssituationen ausreichend Sicherheit.",
+        "Schafft im eigenen Verantwortungsbereich Freiräume, damit Mitarbeitende oder KollegInnen neue Ideen entwickeln können.",
+        "Ermutigt KollegInnen und Mitarbeitende ihre Ideen einzubringen.",
+        "Unterstützt KollegInnen und Mitarbeitende darin, neue Ideen zu realisieren."
+    ],
+     'Veränderung leben': [
+        "Engagiert sich in Veränderungsprojekten im Unternehmen.",
+        "Entwickelt Ideen, um digitale Lösungen für den eigenen Verantwortungsbereich zu forcieren.",
+        "Installiert moderne Arbeitsformen in den eigenen Projekten.",
+        "Erkennt die Notwendigkeit von Veränderungen und unterstützt sie, selbst wenn diese mit Nachteilen für den eigenen Verantwortungsbereich verbunden sind.",
+        "Fördert die Eigenverantwortung der KollegInnen oder Mitarbeitenden für deren Weiterentwicklung.",
+        "Holt aktiv Feedback bei KollegInnen oder Mitarbeitenden ein und reflektiert regelmäßig aus eigenem Antrieb das eigene Verhalten.",
+        "Ist flexibel hinsichtlich Verantwortungsbereich, Gesellschaft oder Arbeitsort und sucht nach neuen Erfahrungen.",
+        "Entwickelt sich nicht nur fachlich, sondern auch persönlich weiter.",
+        "Ist sich der eigenen beruflichen Bedürfnisse und Ziele bewusst und wird aktiv, um diese zu erreichen."
+    ],
+    'Zukunftsorientierung führen': [
+        "Entscheidet bei der Einstellung von Mitarbeitenden nicht nur auf Basis der fachlichen Expertise des Mitarbeitenden, sondern auch auf Basis der Persönlichkeit.",
+        "Investiert Zeit in die Führung von Mitarbeitenden.",
+        "Sorgt dafür, dass das Team fachlich auf dem neuesten Stand ist.",
+        "Nutzt etablierte Mitarbeitergespräche, um individuell Unterstützungs- und Qualifizierungsbedarfe zu erfassen und Maßnahmen zu planen.",
+        "Erkennt PotenzialträgerInnen und fördert sie, auch wenn er/sie diese hierdurch selbst als LeistungsträgerInnen verliert.",
+        "Agiert persönlich als Coach der Mitarbeitenden.",
+        "Plant vorausschauend den Personalbedarf und achtet dabei auf Vielfalt im Team.",
+        "Stellt sicher, dass die Leistungsfähigkeit der Mitarbeitenden langfristig gegeben ist.",
+        "Erkennt Konflikte im Team und löst sie nachhaltig."
+    ],
+    'Orientierung geben': [
+        "Orientiert sich im eigenen Handeln an den Werten & Führungsleitlinien und lebt diese vor.",
+        "Handelt als Führungskraft berechenbar und zuverlässig.",
+        "Kommuniziert und erläutert Mitarbeitenden die Strategie, Ziele und Erwartungen.",
+        "Klärt mit Mitarbeitenden deren Verantwortlichkeiten und Aufgaben.",
+        "Informiert Mitarbeitende über aktuelle Entwicklungen im und außerhalb des Unternehmens.",
+        "Gibt klares, offenes Feedback zu Verhalten und Leistung der Mitarbeitenden.",
+        "Hält die Zielerreichung nach und plant gemeinsam mit Mitarbeitenden geeignete Maßnahmen bei Abweichungen.",
+        "Sorgt für transparente, klare Abläufe und eindeutige Verantwortlichkeiten."
+    ],
+    'Vertrauen leben': [
+        "Begegnet Mitarbeitenden mit positiver Grundhaltung.",
+        "Baut eine persönlich vertrauensvolle Beziehung zu Mitarbeitenden auf.",
+        "Gibt Mitarbeitenden möglichst weite Handlungsspielräume bei der Bewältigung ihrer Aufgaben.",
+        "Ermutigt Mitarbeitende mehr Verantwortung zu übernehmen.",
+        "Sieht mögliche Fehler als Teil eines Entwicklungsprozesses und unterstützt Mitarbeitende darin, aus ihnen zu lernen.",
+        "Begleitet Entwicklungsprozesse von Mitarbeitenden mit Geduld und Ausdauer."
+    ]
+}
+
 
 NOTES_PER_EXERCISE =  {
 "Präsentation und Interview 1":

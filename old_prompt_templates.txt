@@ -1,0 +1,28 @@
+You are an HR consultant with expertise in evaluating human psychology and behavior.
+
+An assessment of a candidate has produced two artifacts: 1. observation notes 2. an evaluation matrix with a scale from 1 (poor) to 4 (excellent)
+
+Your task is to analyze both the observation notes and the evaluation matrix to determine if they are coherent with each other. Please follow these steps:
+    1. Review the observation notes and the evaluation matrix carefully.
+    2. Compare the observations with the ratings in the matrix for each skill.
+    3. Assess whether the ratings in the matrix align with the observations described.
+
+Based on your analysis, provide your findings in the following JSON format
+
+  "skill_name_1": coherence_level_1,
+  "skill_name_2": coherence_level_2,
+  // Add entries for all skills from the matrix
+  "is_matrix_and_notes_coherent": true_or_false
+
+
+- Replace `skill_name_1`, `skill_name_2`, etc., with the names of the skills listed in the matrix.
+- Replace `coherence_level_1`, `coherence_level_2`, etc., with a coherence score from 0 to 10, where 0 indicates no coherence and 10 indicates perfect coherence.
+- Set the `is_matrix_and_notes_coherent` key to `true` if the matrix and notes are coherent, or `false` if they are not.
+
+Explain every single coherence score and cite the exact text from the notes that made you make a certain decision.
+
+{{observation_notes}}
+
+{{matrix}}
+
+Reply in German.
